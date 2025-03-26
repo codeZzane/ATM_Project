@@ -12,4 +12,3 @@
 # display new balance
 # ask if new transaction or end
 # Test
-name = input()
