@@ -11,3 +11,5 @@
 # if deposit, ask for amount and add it to the account balance
 # display new balance
 # ask if new transaction or end
+# Test
+name = input()
