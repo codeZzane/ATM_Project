@@ -21,6 +21,29 @@ def account_3():
     print("Name: Daniel Rove Azarcon")
     print(f"Your balance is: {acc3Balance:.2f}")
 
+# Transactions
+def withdraw():
+    while True:
+        amount = float(input("Enter your withdrawal amount: "))
+        if amount <= acc_bal[card_num]:
+            acc_bal[card_num] -= amount
+            print(f"Your new balance is: {acc_bal[card_num]:.2f}")
+            break
+        else:
+            print("Invalid amount. Try again.")
+            
+
+def deposit():
+    amount = float(input("Enter your deposit amount: "))
+    acc_bal[card_num] += amount
+    print(f"Your new balance is: {acc_bal[card_num]:.2f}")
+
+acc_bal = {
+    "01282005":1000.30,
+    "01182006":10500.40,
+    "08012025":10.00
+}
+
 reg_acc = {       # Key:Value
     "01282005":"012805", # CAN:PIN
     "01182006":"011806",
@@ -51,7 +74,32 @@ else:
     print("Access Denied.")
 
 # ask if deposit or withdraw
-print("Press (1) to Withdraw.\nPress (2) to Desposit.\nPress (0) to exit.")
+while True:
+    print("\nPress (1) to Withdraw.\nPress (2) to Desposit.\nPress (0) to exit.")
+    choice = int(input("Choose an option: "))
+    if choice == 1:
+        withdraw()
+    elif choice == 2:
+        deposit()
+    elif choice == 0:
+        print("Goodbye!")
+        break
+    else:
+        print("Invalid option.")
+        choice = input("Choose an option: ")
+
+    # another_transaction = input("Would you like to make another transaction? Y/N: ").lower().strip()
+    # if another_transaction == "y":
+    #     print("\nPress (1) to Withdraw.\nPress (2) to Desposit.\nPress (0) to exit.")
+    #     choice = int(input("Choose an option: "))
+    # elif another_transaction == "n":
+    #     print("Goodbye!")
+    #     exit()
+    # else:
+    #     print("Invalid input!")
+    #     another_transaction = input("Would you like to make another transaction? Y/N: ").lower().strip()
+
+
 # if withdraw, ask for amount and check whether amount is <= account balance
 # if deposit, ask for amount and add it to the account balance
 # display new balance
