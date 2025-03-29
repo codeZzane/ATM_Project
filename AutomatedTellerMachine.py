@@ -75,29 +75,29 @@ else:
 
 # ask if deposit or withdraw
 while True:
-    print("\nPress (1) to Withdraw.\nPress (2) to Desposit.\nPress (0) to exit.")
+    print("\nPress (1) to Withdraw.\nPress (2) to Desposit.")
     choice = int(input("Choose an option: "))
     if choice == 1:
         withdraw()
     elif choice == 2:
         deposit()
-    elif choice == 0:
-        print("Goodbye!")
-        break
     else:
         print("Invalid option.")
         choice = input("Choose an option: ")
 
-    # another_transaction = input("Would you like to make another transaction? Y/N: ").lower().strip()
-    # if another_transaction == "y":
-    #     print("\nPress (1) to Withdraw.\nPress (2) to Desposit.\nPress (0) to exit.")
-    #     choice = int(input("Choose an option: "))
-    # elif another_transaction == "n":
-    #     print("Goodbye!")
-    #     exit()
-    # else:
-    #     print("Invalid input!")
-    #     another_transaction = input("Would you like to make another transaction? Y/N: ").lower().strip()
+    while True:
+
+        another_transaction = input("Would you like to make another transaction? Y/N: ").lower().strip()
+
+        if another_transaction == "y":
+            break
+        elif another_transaction == "n":
+            print("Goodbye!")
+            exit()
+        else:
+            print("Invalid input! Please enter 'Y' or 'N'.")
+
+        
 
 
 # if withdraw, ask for amount and check whether amount is <= account balance
