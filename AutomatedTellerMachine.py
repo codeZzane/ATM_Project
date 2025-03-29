@@ -57,8 +57,8 @@ acc_details = {
 }
 
 # Ask for CAN and PIN
-card_num = "01182006" #input("Enter your CAN: ")
-pass_num = "011806" #input("Enter your PIN: ")
+card_num = input("Enter your CAN: ")
+pass_num = input("Enter your PIN: ")
 
 # Verify if registered
 for i in range(2, 0, -1): # 3 tries only
@@ -72,7 +72,8 @@ for i in range(2, 0, -1): # 3 tries only
         pass_num = input("Enter your PIN: ")
 else:
     print("Access Denied.")
-
+    exit()
+    
 # ask if deposit or withdraw
 while True:
     print("\nPress (1) to Withdraw.\nPress (2) to Desposit.")
