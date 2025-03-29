@@ -85,22 +85,15 @@ while True:
         print("Invalid option.")
         choice = input("Choose an option: ")
 
-    while True:
+    while True: # asking if want another transaction
 
         another_transaction = input("Would you like to make another transaction? Y/N: ").lower().strip()
 
         if another_transaction == "y":
-            break
+            break # breaking the inner while loop to go back to the main while loop
         elif another_transaction == "n":
             print("Goodbye!")
             exit()
         else:
             print("Invalid input! Please enter 'Y' or 'N'.")
-
-        
-
-
-# if withdraw, ask for amount and check whether amount is <= account balance
-# if deposit, ask for amount and add it to the account balance
-# display new balance
-# ask if new transaction or end
+#####
